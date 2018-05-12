@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class ComponenteAbstracto : MonoBehaviour {
 
+    public delegate void Colision();
+    public static event Colision RebotaHaciaAtras;
+    public static event Colision AlcanzoObjetivo;
 	// Use this for initialization
 	void Start () {
-		
-	}
+        
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -16,6 +19,14 @@ public class ComponenteAbstracto : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        Destroy(this.gameObject);
+        //Destroy(this.gameObject);
+        if(other.tag == "Objetivo")
+        {
+            AlcanzoObjetivo();
+        }
+        else
+        {
+            RebotaHaciaAtras();
+        }
     }
 }

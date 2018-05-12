@@ -15,25 +15,25 @@ public class RotarAbstracto : MonoBehaviour {
 	
     void FixedUpdate()
     {
-        float moveHorizontal = 0f;
+        float moveVertical = 0f;
 
         if (Input.GetKey(KeyCode.J))
         {
-            moveHorizontal = 1f;
+            moveVertical = 1f;
         }
         else if (Input.GetKey(KeyCode.L))
         {
-            moveHorizontal = -1f;
+            moveVertical = -1f;
         }
 
-        float moveVertical = 0f;
+        float moveHorizontal = 0f;
         if (Input.GetKey(KeyCode.I))
         {
-            moveVertical = 1f;
+            moveHorizontal = 1f;
         }
         else if (Input.GetKey(KeyCode.K))
         {
-            moveVertical = -1f;
+            moveHorizontal = -1f;
         }
         transform.Rotate(moveHorizontal, moveVertical, 0f);
     }
