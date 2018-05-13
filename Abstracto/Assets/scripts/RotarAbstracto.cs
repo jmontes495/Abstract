@@ -32,6 +32,16 @@ public class RotarAbstracto : MonoBehaviour {
         {
             moveHorizontal = -1f;
         }
-        transform.Rotate(moveHorizontal*speed, moveVertical*speed, 0f);
+
+        float moveDiagonal = 0f;
+        if (Input.GetKey(KeyCode.Q))
+        {
+            moveDiagonal = 1f;
+        }
+        else if (Input.GetKey(KeyCode.E))
+        {
+            moveDiagonal = -1f;
+        }
+        transform.Rotate(moveHorizontal*speed, moveVertical*speed, moveDiagonal*speed);
     }
 }
