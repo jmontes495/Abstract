@@ -17,21 +17,21 @@ public class RotarAbstracto : MonoBehaviour {
     {
         float moveVertical = 0f;
 
-        if (Input.GetKey(KeyCode.J))
+        if (Input.GetKey(KeyCode.A))
         {
             moveVertical = 1f;
         }
-        else if (Input.GetKey(KeyCode.L))
+        else if (Input.GetKey(KeyCode.D))
         {
             moveVertical = -1f;
         }
 
         float moveHorizontal = 0f;
-        if (Input.GetKey(KeyCode.I))
+        if (Input.GetKey(KeyCode.W))
         {
             moveHorizontal = 1f;
         }
-        else if (Input.GetKey(KeyCode.K))
+        else if (Input.GetKey(KeyCode.S))
         {
             moveHorizontal = -1f;
         }
