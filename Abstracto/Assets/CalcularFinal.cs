@@ -18,7 +18,6 @@ public class CalcularFinal : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         distancia = (jugador.gameObject.transform.position.z - this.transform.position.z) - maximo;
-        Debug.Log(distancia);
         elSource.volume = distancia*0.0005f;
 	}
 }

@@ -8,6 +8,11 @@ TagManager:
   - Objetivo
   - Efectos
   - Limite
+  - Piso
+  - MuroIzq
+  - MuroDer
+  - MuroArriba
+  - Inicio
   layers:
   - Default
   - TransparentFX
