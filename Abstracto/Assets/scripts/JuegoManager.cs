@@ -21,7 +21,10 @@ public class JuegoManager : MonoBehaviour {
         ComponenteAbstracto.AlcanzoObjetivo += MetaJuego;
         VidasManager.JugadorSinVidas += SinVidas;
         StartCoroutine("TranscurrirTiempo");
-	}
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -50,7 +53,7 @@ public class JuegoManager : MonoBehaviour {
 
     IEnumerator TranscurrirTiempo()
     {
-        segundosRestantes = 10;
+        segundosRestantes = 350;
         enTranscurso = true;
         while(segundosRestantes > 0)
         {
