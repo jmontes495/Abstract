@@ -9,6 +9,8 @@ public class MoverJugador : MonoBehaviour
 
     bool enMarcha = true;
 
+    bool detener = false;
+
     Vector3 posInicial;
 
 
@@ -51,6 +53,7 @@ public class MoverJugador : MonoBehaviour
     void Reiniciar()
     {
         enMarcha = true;
+        detener = false;
         transform.position = posInicial;
     }
 
@@ -142,6 +145,7 @@ public class MoverJugador : MonoBehaviour
     public void TerminarJuego()
     {
         enMarcha = false;
+        detener = true;
         rb.velocity = Vector3.zero;
     }
 
@@ -157,7 +161,10 @@ public class MoverJugador : MonoBehaviour
             contador++;
             yield return new WaitForSeconds(0.1f);
         }
-        enMarcha = true;
+        if(!detener)
+        {
+            enMarcha = true;
+        }
     }
 
     private IEnumerator HaciaAdelante()
@@ -169,7 +176,10 @@ public class MoverJugador : MonoBehaviour
             contador++;
             yield return new WaitForSeconds(0.1f);
         }
-        enMarcha = true;
+        if (!detener)
+        {
+            enMarcha = true;
+        }
     }
 
     private IEnumerator HaciaArriba()
@@ -181,7 +191,10 @@ public class MoverJugador : MonoBehaviour
             contador++;
             yield return new WaitForSeconds(0.1f);
         }
-        enMarcha = true;
+        if (!detener)
+        {
+            enMarcha = true;
+        }
     }
 
     private IEnumerator HaciaAbajo()
@@ -193,7 +206,10 @@ public class MoverJugador : MonoBehaviour
             contador++;
             yield return new WaitForSeconds(0.1f);
         }
-        enMarcha = true;
+        if (!detener)
+        {
+            enMarcha = true;
+        }
     }
 
     private IEnumerator HaciaDerecha()
@@ -205,7 +221,10 @@ public class MoverJugador : MonoBehaviour
             contador++;
             yield return new WaitForSeconds(0.1f);
         }
-        enMarcha = true;
+        if (!detener)
+        {
+            enMarcha = true;
+        }
     }
 
     private IEnumerator HaciaIzquierda()
@@ -217,7 +236,10 @@ public class MoverJugador : MonoBehaviour
             contador++;
             yield return new WaitForSeconds(0.1f);
         }
-        enMarcha = true;
+        if (!detener)
+        {
+            enMarcha = true;
+        }
     }
 
     //--------------------------------------------------------------------------------------------------------------------

@@ -13,6 +13,7 @@ public class ComponenteAbstracto : MonoBehaviour {
     public static event Colision RebotaHaciaIzquierda;
     public static event Colision RebotaHaciaAbajo;
     public static event Colision RebotaHaciaAdelante;
+    public static event Colision RecibeGolpe;
 
 
 
@@ -40,26 +41,35 @@ public class ComponenteAbstracto : MonoBehaviour {
         else if(other.tag == "Piso")
         {
             RebotaHaciaArriba();
+            RecibeGolpe();
         }
         else if (other.tag == "MuroIzq")
         {
             RebotaHaciaDerecha();
+            RecibeGolpe();
+
         }
         else if (other.tag == "MuroDer")
         {
             RebotaHaciaDerecha();
+            RecibeGolpe();
+
         }
         else if (other.tag == "MuroArriba")
         {
             RebotaHaciaAbajo();
+            RecibeGolpe();
+
         }
         else if (other.tag == "Inicio")
         {
             RebotaHaciaAdelante();
+
         }
         else
         {
             RebotaHaciaAtras();
+            RecibeGolpe();
         }
     }
 }

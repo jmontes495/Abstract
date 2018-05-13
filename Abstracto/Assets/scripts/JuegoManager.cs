@@ -19,6 +19,7 @@ public class JuegoManager : MonoBehaviour {
 	void Awake () {
         tiempo = GameObject.FindGameObjectWithTag("Tiempo").GetComponent<Text>();
         ComponenteAbstracto.AlcanzoObjetivo += MetaJuego;
+        VidasManager.JugadorSinVidas += SinVidas;
         StartCoroutine("TranscurrirTiempo");
 	}
 	
@@ -36,6 +37,14 @@ public class JuegoManager : MonoBehaviour {
         tiempo.text = "You Win";
         StopCoroutine("TranscurrirTiempo");
         enTranscurso = false;
+        TerminarJuego();
+    }
+
+    public void SinVidas()
+    {
+        enTranscurso = false;
+        tiempo.text = "out of lifes - press space to retry";
+        StopCoroutine("TranscurrirTiempo");
         TerminarJuego();
     }
 
@@ -60,7 +69,7 @@ public class JuegoManager : MonoBehaviour {
             segundosRestantes--;
             yield return new WaitForSeconds(1f);
         }
-        tiempo.text = "game over - press space to replay";
+        tiempo.text = "out of time - press space to retry";
         enTranscurso = false;
         TerminarJuego();
     }
