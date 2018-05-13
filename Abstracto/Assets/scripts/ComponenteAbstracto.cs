@@ -21,7 +21,6 @@ public class ComponenteAbstracto : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        //Destroy(this.gameObject);
         if(other.tag == "Objetivo")
         {
             AlcanzoObjetivo();
@@ -29,6 +28,10 @@ public class ComponenteAbstracto : MonoBehaviour {
         else if (other.tag == "Salida")
         {
             SalidaObstaculo();
+        }
+        else if (other.tag == "Limite")
+        {
+            other.GetComponent<InterruptorPared>().desaparecer();
         }
         else
         {
