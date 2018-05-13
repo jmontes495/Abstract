@@ -13,7 +13,7 @@ public class EfectosSonido : MonoBehaviour
 
 
     // Use this for initialization
-    void Start()
+    void Awake()
     {
         audioS = GetComponent<AudioSource>();
         ComponenteAbstracto.SalidaObstaculo += reproducirPapel;

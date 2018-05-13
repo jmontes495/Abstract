@@ -9,7 +9,7 @@ public class CalcularFinal : MonoBehaviour {
     GameObject jugador;
     AudioSource elSource;
 	// Use this for initialization
-	void Start () {
+	void Awake () {
         jugador = GameObject.FindWithTag("Player");
         elSource = GetComponent<AudioSource>();
         maximo = (jugador.gameObject.transform.position.z - this.transform.position.z);

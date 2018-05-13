@@ -9,9 +9,11 @@ public class MoverJugador : MonoBehaviour
 
     bool enMarcha = true;
 
+    Vector3 posInicial;
+
 
     // Use this for initialization
-    void Start()
+    void Awake()
     {
         ComponenteAbstracto.RebotaHaciaAtras += Rebote;
         ComponenteAbstracto.RebotaHaciaArriba += ReboteHaciaArriba;
@@ -20,7 +22,9 @@ public class MoverJugador : MonoBehaviour
         ComponenteAbstracto.RebotaHaciaAbajo += ReboteHaciaAbajo;
         ComponenteAbstracto.RebotaHaciaAdelante += ReboteHaciaAdelante;
         JuegoManager.TerminarJuego += TerminarJuego;
+        JuegoManager.Reiniciar += Reiniciar;
         rb = GetComponent<Rigidbody>();
+        posInicial = transform.position;
     }
 
     void FixedUpdate()
@@ -44,6 +48,12 @@ public class MoverJugador : MonoBehaviour
         }
     }
 
+    void Reiniciar()
+    {
+        enMarcha = true;
+        transform.position = posInicial;
+    }
+
     //----------------------------------------------------------------------------------------------------------------
     // Rebotes
 
@@ -52,7 +62,7 @@ public class MoverJugador : MonoBehaviour
         if(enMarcha)
         {
             enMarcha = false;
-            rb.velocity = new Vector3(0, 0, 0);
+            rb.velocity = Vector3.zero;
             Vector3 setback = new Vector3(0.0f, 0.0f, -100.0f);
 
             rb.AddForce(setback);
@@ -66,7 +76,7 @@ public class MoverJugador : MonoBehaviour
         if (enMarcha)
         {
             enMarcha = false;
-            rb.velocity = new Vector3(0, 0, 0);
+            rb.velocity = Vector3.zero;
             Vector3 setback = new Vector3(0.0f, 0.0f, 100.0f);
 
             rb.AddForce(setback);
@@ -80,7 +90,7 @@ public class MoverJugador : MonoBehaviour
         if (enMarcha)
         {
             enMarcha = false;
-            rb.velocity = new Vector3(0, 0, 0);
+            rb.velocity = Vector3.zero;
             Vector3 setback = new Vector3(0.0f, 100.0f, 0.0f);
 
             rb.AddForce(setback);
@@ -93,7 +103,7 @@ public class MoverJugador : MonoBehaviour
         if (enMarcha)
         {
             enMarcha = false;
-            rb.velocity = new Vector3(0, 0, 0);
+            rb.velocity = Vector3.zero;
             Vector3 setback = new Vector3(0.0f, -100.0f, 0.0f);
 
             rb.AddForce(setback);
@@ -106,7 +116,7 @@ public class MoverJugador : MonoBehaviour
         if (enMarcha)
         {
             enMarcha = false;
-            rb.velocity = new Vector3(0, 0, 0);
+            rb.velocity = Vector3.zero;
             Vector3 setback = new Vector3(-100.0f, 0.0f, 0.0f);
 
             rb.AddForce(setback);
@@ -119,7 +129,7 @@ public class MoverJugador : MonoBehaviour
         if (enMarcha)
         {
             enMarcha = false;
-            rb.velocity = new Vector3(0, 0, 0);
+            rb.velocity = Vector3.zero;
             Vector3 setback = new Vector3(100.0f, 0.0f, 0.0f);
 
             rb.AddForce(setback);
@@ -131,8 +141,8 @@ public class MoverJugador : MonoBehaviour
 
     public void TerminarJuego()
     {
-        rb.velocity = new Vector3(0, 0, 0);
         enMarcha = false;
+        rb.velocity = Vector3.zero;
     }
 
 

@@ -286,7 +286,7 @@ GameObject:
   - component: {fileID: 480930467}
   - component: {fileID: 480930466}
   m_Layer: 0
-  m_Name: Image
+  m_Name: controles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
