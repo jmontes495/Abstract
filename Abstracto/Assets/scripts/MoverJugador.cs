@@ -57,7 +57,6 @@ public class MoverJugador : MonoBehaviour
 
     private IEnumerator HaciaAtras()
     {
-        Vector3 elZero = new Vector3(0, 0, 0);
         int contador = 0;
         while (contador < 5)
         {

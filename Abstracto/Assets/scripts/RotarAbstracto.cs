@@ -4,14 +4,11 @@ using UnityEngine;
 
 public class RotarAbstracto : MonoBehaviour {
 
-    float speed = 5f;
+    float speed = 1f;
 
-    Rigidbody rb;
+    void Start () {
 
-	// Use this for initialization
-	void Start () {
-        rb = GetComponent<Rigidbody>();
-	}
+    }
 	
     void FixedUpdate()
     {
@@ -35,6 +32,6 @@ public class RotarAbstracto : MonoBehaviour {
         {
             moveHorizontal = -1f;
         }
-        transform.Rotate(moveHorizontal, moveVertical, 0f);
+        transform.Rotate(moveHorizontal*speed, moveVertical*speed, 0f);
     }
 }

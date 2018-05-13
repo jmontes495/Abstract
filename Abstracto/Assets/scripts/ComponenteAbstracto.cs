@@ -7,6 +7,8 @@ public class ComponenteAbstracto : MonoBehaviour {
     public delegate void Colision();
     public static event Colision RebotaHaciaAtras;
     public static event Colision AlcanzoObjetivo;
+    public static event Colision SalidaObstaculo;
+
 	// Use this for initialization
 	void Start () {
         
@@ -23,6 +25,10 @@ public class ComponenteAbstracto : MonoBehaviour {
         if(other.tag == "Objetivo")
         {
             AlcanzoObjetivo();
+        }
+        else if (other.tag == "Salida")
+        {
+            SalidaObstaculo();
         }
         else
         {
