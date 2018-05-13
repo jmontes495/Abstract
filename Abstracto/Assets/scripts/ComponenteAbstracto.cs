@@ -25,13 +25,10 @@ public class ComponenteAbstracto : MonoBehaviour {
         {
             AlcanzoObjetivo();
         }
-        else if (other.tag == "Salida")
-        {
-            SalidaObstaculo();
-        }
         else if (other.tag == "Limite")
         {
             other.GetComponent<InterruptorPared>().desaparecer();
+            SalidaObstaculo();
         }
         else
         {

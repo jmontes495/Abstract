@@ -32,7 +32,7 @@ public class JuegoManager : MonoBehaviour {
 
     IEnumerator TranscurrirTiempo()
     {
-        segundosRestantes = 30;
+        segundosRestantes = 300;
         while(segundosRestantes > 0)
         {
             string adicionMinutos = "";
